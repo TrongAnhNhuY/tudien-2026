@@ -21,7 +21,7 @@
         <h1 class="text-xl font-black tracking-tighter uppercase italic">TRONGANH.<span class="text-blue-500 underline">PRO</span></h1>
         <div class="hidden md:flex gap-10 text-[10px] font-extrabold uppercase tracking-[0.3em] text-slate-400">
             <a href="#about" class="hover:text-blue-500 transition-all">Profile</a>
-            <a href="#smartdict" class="hover:text-blue-500 transition-all">Smart Dict v6.0</a>
+            <a href="#smartdict" class="hover:text-blue-500 transition-all">Smart Dict</a>
             <a href="#academic" class="hover:text-blue-500 transition-all">Academic</a>
         </div>
     </nav>
@@ -34,11 +34,11 @@
             Phan Nguyễn <br><span class="text-blue-500">Trọng Anh</span>
         </h2>
         <p class="max-w-3xl text-slate-400 leading-relaxed text-sm md:text-xl font-medium italic opacity-90">
-            "Chuyên sâu ngôn ngữ Anh trình độ B2+. Kết hợp tư duy công nghệ để xây dựng nền tảng tri thức vững chắc cho tương lai tại các trường đại học hàng đầu."
+            "Chuyên sâu ngôn ngữ Anh . Kết hợp tư duy công nghệ để xây dựng nền tảng tri thức vững chắc cho tương lai tại các trường đại học hàng đầu."
         </p>
         <div class="mt-12 flex gap-6">
             <a href="#smartdict" class="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-[2rem] font-bold transition shadow-2xl shadow-blue-500/40 uppercase text-[11px] tracking-widest">
-                Tra cứu Word Family B2
+                Tra cứu Word Family 
             </a>
         </div>
     </section>
@@ -48,12 +48,12 @@
             <div class="text-center mb-16">
                 <span class="text-blue-500 font-black text-xs uppercase tracking-[0.5em]">Advanced Vocabulary Database</span>
                 <h3 class="text-5xl font-black text-white mt-4 italic uppercase">Smart <span class="text-blue-500 underline decoration-4 underline-offset-8 italic">Dict</span></h3>
-                <p class="text-slate-500 text-sm mt-6 font-medium italic">Công cụ tối ưu dành cho học sinh 12C11 chinh phục kỳ thi 2026</p>
+                <p class="text-slate-500 text-sm mt-6 font-medium italic">Công cụ tối ưu dành cho học sinh chinh phục kỳ thi 2026</p>
             </div>
 
             <div class="glass rounded-[3.5rem] p-8 md:p-14 shadow-2xl border border-white/5 relative overflow-hidden">
                 <div class="mb-12 relative">
-                    <input type="text" id="searchInput" oninput="handleInput()" placeholder="Nhập từ vựng B1/B2 (vd: evaluate, innovate, emerge...)" 
+                    <input type="text" id="searchInput" oninput="handleInput()" placeholder="Nhập từ vựng" 
                         class="w-full bg-slate-900/60 border border-slate-700/50 rounded-3xl px-8 py-6 focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 text-white font-bold text-lg transition-all placeholder:text-slate-600">
                     <div id="suggestionBox" class="absolute left-0 right-0 mt-3 bg-slate-900 border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl hidden z-50 fade-in"></div>
                 </div>
@@ -84,15 +84,12 @@
     </footer>
 
     <script>
-        // BỘ DỮ LIỆU NÂNG CAO B1/B2 (100+ TỪ)
         const dictionary = [
-            // Căn bản & B1
             { m: "Quyết định", v: "decide", n: "decision, decisiveness", adj: "decisive, decided", adv: "decisively" },
             { m: "Thành công", v: "succeed", n: "success", adj: "successful", adv: "successfully" },
             { m: "Phát triển", v: "develop", n: "development, developer", adj: "developed, developing", adv: "N/A" },
             { m: "Cạnh tranh", v: "compete", n: "competition, competitor", adj: "competitive", adv: "competitively" },
             
-            // Nâng cao B2 - Học thuật
             { m: "Đánh giá / Ước tính", v: "evaluate", n: "evaluation, evaluator", adj: "evaluative", adv: "N/A" },
             { m: "Đổi mới / Sáng tạo", v: "innovate", n: "innovation, innovator", adj: "innovative", adv: "innovatively" },
             { m: "Nổi lên / Hiện ra", v: "emerge", n: "emergence", adj: "emergent, emerging", adv: "N/A" },
@@ -113,14 +110,13 @@
             { m: "Tận tâm / Cống hiến", v: "dedicate", n: "dedication", adj: "dedicated", adv: "N/A" },
             { m: "Phức tạp", v: "complicate", n: "complication, complexity", adj: "complicated, complex", adv: "N/A" },
             { m: "Hợp tác", v: "collaborate", n: "collaboration, collaborator", adj: "collaborative", adv: "collaboratively" }
-            // Trọng Anh có thể tiếp tục thêm từ vào đây
+
         ];
 
         function handleInput() {
             const input = document.getElementById('searchInput').value.toLowerCase().trim();
             const suggestionBox = document.getElementById('suggestionBox');
             if (input.length < 1) { suggestionBox.classList.add('hidden'); return; }
-
             let matches = [];
             dictionary.forEach(entry => {
                 const allWords = [entry.v, entry.n, entry.adj, entry.adv].join(', ').toLowerCase();
